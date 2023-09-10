@@ -5,21 +5,45 @@
     font-family: sans-serif;
 }
 header{
-    background-color: rgba(7, 228, 44, 0.782);
+    background-color: rgb(3, 72, 18);
     width: 100%;
-    height: 70px;
-    line-height: 70px;
+    height: 60px;
+    line-height: 60px;
     padding: 0px 30px;
     position: fixed;
+    text-transform: uppercase;
+    animation: header 1s;
 }
-header .logo{
+@keyframes header{
+    0%{
+        transform: translateY(-100%);
+    }
+}
+header label{
     float: left;
     font-weight: bold;
-    text-transform: uppercase;
+    cursor: pointer;
     font-size: 35px;
+    color: rgb(143, 141, 141);
+    animation: label 1.5s;
+}
+@keyframes label{
+    0%{
+        transform: translateX(-100%);
+    }
+}
+#logo{
+    display: none;
+}
+header label:hover, #logo:checked ~ label
+{
+    color: white;
+    text-shadow: 1px 1px 5px white,
+    -1px -1px 5px white;
 }
 header nav{
     float: right;
+    font-size: 20px;
 }
 header nav li{
     list-style: none;
@@ -27,16 +51,14 @@ header nav li{
 }
 header nav li a{
     text-decoration: none;
-    color: aliceblue;
-    text-transform: uppercase;
+    color: white;
     padding: 0px 20px;
-    font-size: 20px;
 }
 header nav li a:hover{
     color: crimson;
 }
 header nav li a:active{
-    color: black;
+    color: rgb(148, 50, 214);
 }
 .checkbtn{
     color: white;
@@ -60,17 +82,18 @@ header nav li a:active{
     }
     header nav{
         width: 100%;
-        height: 55vh;
+        height: 50vh;
         background-color: #53694c;
-        top: 75px;
+        top: 65px;
         position: absolute;
         right: -100%;
         text-align: center;
         transition: 0.5s;
+        font-size: 20px;
     }
     header nav li{
         display: block;
-        margin: 40px 0px;
+        margin: 35px 0px;
         line-height: 20px;
     }
     #check:checked ~ nav{
